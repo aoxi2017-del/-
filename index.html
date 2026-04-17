@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>集装箱装货柜计算器</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header>
+        <h1>集装箱装货柜计算器</h1>
+        <p>输入每个产品的件数（CTN/DRUM 数量），自动计算总体积、总毛重和装柜建议。</p>
+      </header>
+
+      <section class="card" aria-labelledby="products-title">
+        <h2 id="products-title">产品清单</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>中文品名</th>
+                <th>英文品名</th>
+                <th>规格</th>
+                <th>净重/件 (kg)</th>
+                <th>体积/件 (m³)</th>
+                <th>毛重/件 (kg)</th>
+                <th>件数</th>
+                <th>小计体积 (m³)</th>
+                <th>小计毛重 (kg)</th>
+              </tr>
+            </thead>
+            <tbody id="products-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">汇总与装柜建议</h2>
+        <div class="summary-grid">
+          <div><span>总件数</span><strong id="total-units">0</strong></div>
+          <div><span>总净重 (kg)</span><strong id="total-net">0</strong></div>
+          <div><span>总体积 (m³)</span><strong id="total-volume">0</strong></div>
+          <div><span>总毛重 (kg)</span><strong id="total-gross">0</strong></div>
+        </div>
+        <div id="container-advice" class="advice" role="status" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
